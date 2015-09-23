@@ -299,7 +299,7 @@
         * Réutiliser des fonctions aide à réduire la redondance
         * Les fonctions prennent des **arguments** et peuvent **retourner** des valeurs
         
-        ex: la fonction `add` prend `a` et `b` comme arguments et **retournera** le résultat.
+        ex: la fonction `ajout` prend `a` et `b` comme arguments et **retournera** le résultat.
 
         ```python
         >>> def ajout(a, b):
@@ -414,16 +414,16 @@
         Python peut aussi être utilisé pour convertir des nombres en «strings». L'exemple suivant retourne une erreur. Pourquoi ?
 
         ```
-        >>> print("les élections" + 2015)
+        >>> print("les élections " + 2015)
         Traceback (most recent call last):
         File "<input>", line 1, in <module>
-        TypeError: cannot concatenate 'str' and 'int' objects 
+        TypeError: unsupported operand type(s) for +: 'int' and 'str'
         ```
         
         Utilisez la fonction `str()` pour convertir un nombre en «string».
 
         ```
-        >>> print("les élections" + str(2015))
+        >>> print("les élections " + str(2015))
 
         ```
         
@@ -668,7 +668,7 @@
         ```python
         # file: ex2_conseil_meteo.py
         # -*- coding: utf-8 -*-
-        meteo = raw_input("Quel temps fait-il? (froid, pluvieux, etc.)>")
+        meteo = raw_input("Quel temps fait-il? (froid, pluvieux, etc.)")
 
         if meteo == "froid":
             print("Mets un chandail!")
@@ -699,9 +699,9 @@
         >>> if meteo == "froid":
         ...     print("Mets un chandail!")
         ... else:
-        ... print("Fais ce que tu veux :)")
+        ... print("Fais comme tu veux :)")
         File "<input>", line 5
-            print("Fais ce que tu veux :)")
+            print("Fais comme tu veux :)")
                 ^
         IndentationError: expected an indented block
         ```
@@ -815,10 +815,8 @@
         # la température est plus petite que 25 degrés MAIS plus grande que 15 degrés
         elif "remplacez ceci par la bonne condition":
             # Allons prendre une bonne crème glacée !
-            pass
         else:
             # Portez votre gilet chaud préféré et révez à la plage
-            pass
         ```
 
 
