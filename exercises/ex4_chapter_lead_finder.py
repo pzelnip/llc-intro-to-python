@@ -9,4 +9,4 @@ import csv
 
     # Compare the 'City' in the row with your city
 
-        # Print "Thank you [[Chapter Lead(s)]]!"
+        # Print a thank you message to your chapter lead(s)

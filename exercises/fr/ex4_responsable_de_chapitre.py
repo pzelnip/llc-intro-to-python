@@ -10,4 +10,4 @@ import csv
 
     # comparez le champ 'City' à votre ville
 
-        # Imprimez "Merci [[les responsables du chapitre]]! dans la console"
+        # Imprimez un message qui remerci les responsables du chapitre dans la console
