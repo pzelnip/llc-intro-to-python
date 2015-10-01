@@ -11,6 +11,8 @@ Once we know how many people attended last year, we can aim to increase that num
 """
 
 import csv
+import os
+
 
 #
 # Python strings have a `.find(…)` method that allow you to search for a sequence of characters within a string
@@ -29,22 +31,20 @@ print('National Learn to Code Day 2014 Intro to HTML & CSS: Building a Multi-Pag
 print('Kids Learning Code: Intro to Programming with Python'.find(learn))
 # -1
 
-workshop_file = open('../exercises/llc-workshop-data.csv')
+with open(os.path.join(os.pardir, 'exercises', 'llc-workshop-data.csv')) as workshop_file:
 
-reader = csv.DictReader(workshop_file)
+    reader = csv.DictReader(workshop_file)
 
-#
-# In the last exercise, we counted all the rows to get the total length.
-# This time we only want to count the rows where the 'Event Name' contains 'National Learn to Code Day'
-# Any time find has a value `>=` (greater than or equal to) 0 we can increment count, and get the number of attendees
-#
-count = 0
-for row in reader:
-    name = row['Event Name']
-    if name.find(learn) >= 0:
-        count += 1
+    #
+    # In the last exercise, we counted all the rows to get the total length.
+    # This time we only want to count the rows where the 'Event Name' contains 'National Learn to Code Day'
+    # Any time find has a value `>=` (greater than or equal to) 0 we can increment count, and get the number of attendees
+    #
+    count = 0
+    for row in reader:
+        name = row['Event Name']
+        if name.find(learn) >= 0:
+            count += 1
 
-print(count)
-# 798
-
-workshop_file.close()
+    print(count)
+    # 798
