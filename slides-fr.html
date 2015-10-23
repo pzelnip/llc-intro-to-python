@@ -841,10 +841,9 @@
         Regardons l'exemple ci-dessous pour connaître comment ouvrir un fichier en Python et afficher son contenu dans votre écran.
 
         ```python
-        >>> chapters = open('./exercises/llc-chapters.csv')
-        >>> print(chapters.read())
-        # ... Une grande quantité de données ...
-        >>> chapters.close()
+        >>> with open('./exercises/llc-chapters.csv') as chapters:
+        >>>     print(chapters.read())
+        >>>
         # Lorsque vous en avez terminé avec le fichier, c'est une bonne idée de le fermer
         ```
       </script>
@@ -861,17 +860,15 @@
         Essayons d'en imprimer quelques lignes, une à la fois 
 
         ```python
-        >>> chapters = open('./exercises/llc-chapters.csv')
-        >>> print(chapters.readline())
+        >>> with open('./exercises/llc-chapters.csv') as chapters:
+        >>>     print(chapters.readline())
         City,Province,Chapter Lead(s)
 
-        >>> print(chapters.readline())
+        >>>     print(chapters.readline())
         Vancouver,BC,Meghan
 
-        >>> print(chapters.readline())
+        >>>     print(chapters.readline())
         Calgary,AB,Darcie
-
-        >>> chapters.close()
         ```
       </script>
     </section>
@@ -909,11 +906,10 @@
         Voici un petit extrait de code:
 
         ```python
-        >>> chapters = open('./exercises/llc-chapters.csv')
+        >>> with open('./exercises/llc-chapters.csv') as chapters:
         >>> for line in chapters:
         ...     print(line)
         ...
-        >>> chapters.close()
         ```
 
         Informations supplémentaires: https://docs.python.org/2/tutorial/controlflow.html#for-statements
@@ -1008,17 +1004,17 @@
 
         ```
         >>> import csv
-        >>> chapters_file = open('./exercises/llc-chapters.csv')
-        >>> chapters_data = csv.DictReader(chapters_file)
+        >>> with open('./exercises/llc-chapters.csv') as chapters_file:
+        >>>     chapters_data = csv.DictReader(chapters_file)
         ```
 
         Nous pouvons maintenant obtenir une ligne à la fois:
 
         ```
-        >>> chapter = chapters_data.next()
-        >>> print(chapter)
+        >>>     chapter = chapters_data.next()
+        >>>     print(chapter)
         {'City': 'Vancouver', 'Chapter Lead(s)': 'Meghan', 'Province': 'BC'}
-        >>> type(chapter)
+        >>>     type(chapter)
         <type 'dict'>
         ```
       </script>
@@ -1056,11 +1052,11 @@
 
         ```python
         >>> import csv
-        >>> chapters_file = open('./exercises/llc-chapters.csv')
-        >>> chapters = csv.DictReader(chapters_file)
-        >>> for chapter in chapters:
-        ...     print(chapter['City'] + ', ' + chapter['Province'])
-        ...     print('    ' + chapter['Chapter Lead(s)'])
+        >>> with open('./exercises/llc-chapters.csv') as chapters_file:
+        >>>     chapters = csv.DictReader(chapters_file)
+        >>>     for chapter in chapters:
+        ...         print(chapter['City'] + ', ' + chapter['Province'])
+        ...         print('    ' + chapter['Chapter Lead(s)'])
         ...
         Vancouver, BC
             Meghan
@@ -1122,14 +1118,14 @@
         # file: exercises/demo_loop_count.py
         import csv
 
-        csv_file = open('llc-chapters.csv')
-        csv_data = csv.DictReader(csv_file)
+        with open('llc-chapters.csv') as csv_file:
+            csv_data = csv.DictReader(csv_file)
 
-        count = 0
-        for row in csv_data:
-            count += 1
+            count = 0
+            for row in csv_data:
+                count += 1
 
-        print("There are " + str(count) + " chapters")
+            print("There are " + str(count) + " chapters")
         ```
       </script>
     </section>

@@ -10,20 +10,20 @@ We can use a variable to count the number of loops, and that will give us the to
 """
 
 import csv
+import os
 
-chapters_file = open('../exercises/llc-chapters.csv')
 
-reader = csv.DictReader(chapters_file)
+with open(os.path.join(os.pardir, 'exercises', 'llc-chapters.csv')) as chapters_file:
 
-count = 0
-for row in reader:
-    print(row)
-    #
-    # += is the same are writing `count = count + 1`
-    #
-    count += 1
+    reader = csv.DictReader(chapters_file)
 
-print(count)
-# 16
+    count = 0
+    for row in reader:
+        print(row)
+        #
+        # += is the same are writing `count = count + 1`
+        #
+        count += 1
 
-chapters_file.close()
+    print(count)
+    # 16
