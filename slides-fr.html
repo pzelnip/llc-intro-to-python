@@ -920,14 +920,10 @@
       <script type="text/template">
         ## L'arrière-scène des boucles `for`
 
-        Si vous explorez la variable `chapters` dans votre console, vous remarquerez peut-être qu'elle possède une méthode nommée `.next()`. Elle effectue la même chose que la méthode `.readline()`. 
-
-        La boucle `for` fonctionne avec différents regroupements de données; la seule chose qu'elle demande en retour est la présence de la méthode `.next()`.
-
-        En dessous des couvertes, elle effectue quelque chose de similaire à:
+        En dessous des couvertes, la boucle `for` effectue quelque chose de similaire à:
 
         ```python
-        line = chapters.next()
+        line = next(chapters)
         # exécution de votre code dans la boucle
         # ...
         # traitement de la donnée suivante jusqu'à ce qu'il n'y ait plus de valeur
@@ -1011,7 +1007,7 @@
         Nous pouvons maintenant obtenir une ligne à la fois:
 
         ```
-        >>>     chapter = chapters_data.next()
+        >>>     chapter = next(chapters_data)
         >>>     print(chapter)
         {'City': 'Vancouver', 'Chapter Lead(s)': 'Meghan', 'Province': 'BC'}
         >>>     type(chapter)

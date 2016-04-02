@@ -925,14 +925,10 @@
       <script type="text/template">
         ## `for` loop behind the scenes
 
-        If you play around with the `chapters` variable in your console, you might notice that it has a `.next()` function which does the same thing as `.readline()`
-
-        `for` can work with many different collections of data, all it&rsquo;s looking for is that `.next()` function.
-
-        Behind the scenes, it&rsquo;s doing something roughly like
+        Behind the scenes, the for loop is doing something roughly like:
 
         ```python
-        line = chapters.next()
+        line = next(chapters)
         # Execute your code block
         # ...
         # Go back to get the next value and repeat until there are no more values
@@ -1012,7 +1008,7 @@
         Now, we can pull out one row at a time.
 
         ```
-        >>>     chapter = chapters_data.next()
+        >>>     chapter = next(chapters_data)
         >>>     print(chapter)
         {'City': 'Vancouver', 'Chapter Lead(s)': 'Meghan', 'Province': 'BC'}
         >>>     type(chapter)
