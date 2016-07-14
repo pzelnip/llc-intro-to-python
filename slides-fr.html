@@ -91,12 +91,12 @@
         # Projet d'aujourd'hui
 
         ![](framework/img/workshop/learn-to-code-day.jpg)
-        Imaginez que vous devez organiser **la Journée nationale de l'apprentissage du code de 2015**. 
+        Imaginez que vous devez organiser **la Journée nationale de l'apprentissage du code de 2016**. 
         
         Vous souhaitez que ce soit un aussi gros succès que l'année précédente. 
         Non seulement vous aurez besoin de savoir combien de personnes seront présentes (pour battre ce record) mais vous souhaitez aussi recueillir d'intéressantes statistiques afin d'étayer votre communiqué de presse.
         
-        Aujourd'hui, vous apprendrez comment «réfléchir» comme un ordinateur tout en recueillant de précieuses &laquo;informations&raquo; au sujet des apprenti(e)s de l'événement de Ladies Learning Code en 2014.
+        Aujourd'hui, vous apprendrez comment «réfléchir» comme un ordinateur tout en recueillant de précieuses &laquo;informations&raquo; au sujet des apprenti(e)s de l'événement de Ladies Learning Code en 2015.
       </script>
     </section>
 
@@ -531,16 +531,22 @@
         
         À la place d'afficher simplement 'Hello World' sur l'écran, allons un peu plus loin et utilisons Python pour saluer tout le monde!
       
-        Essayez d'utiliser la fonction `raw_input()`. De cette façon, les données entrées par un utilisateur vous seront **retournées**.
+        Essayez d'utiliser a fonction `raw_input()` en Python 2 (ou `input` si vous avez installé Python 3). De cette façon, les données entrées par un utilisateur vous seront **retournées**.
         
-        1. Donnez à `raw_input()` un message demandant une information précise à l'utilisateur
+        1. Donnez à `raw_input()` (ou `input()`) un message demandant une information précise à l'utilisateur
         1. L'utilisateur entre quelque chose et appuie sur la touche **entrée** 
         1. Peu importe ce que l'utilisateur entre, cette information vous est **retournée**.
   
         Essayez-le dans la console:
 
+        Python 2
         ```python
         >>> raw_input("Quel est votre nom?")
+        ```
+        
+        Python 3
+        ```python
+        >>> input("Quel est votre nom?")
         ```
       </script>
     </section>
@@ -561,11 +567,21 @@
 
         1. Ajoutez ce petit programme/code à votre ficher.
 
+          Python 2
           ```python
           # Assignez la valeur de raw_input a la variable
           # Your program waits for the user to hit enter
           nom = raw_input("S.V.P entrez votre nom: ")
+          ```
 
+          Python 3
+          ```python
+          # Assignez la valeur de input a la variable
+          # Your program waits for the user to hit enter
+          nom = input("S.V.P entrez votre nom: ")
+          ```
+        
+          ```python
           # ... Puis continuez sur cette ligne
           print("Bonjour " + nom)
           ```
@@ -664,9 +680,19 @@
 
         ```python
         # file: ex2_conseil_meteo.py
-        # -*- coding: utf-8 -*-
+        ```
+        
+        Python 2
+        ```python
         meteo = raw_input("Quel temps fait-il? (froid, pluvieux, etc.)")
+        ```
 
+        Python 3
+        ```python
+        meteo = input("Quel temps fait-il? (froid, pluvieux, etc.)")
+        ```
+        
+        ```python
         if meteo == "froid":
             print("Mets un chandail!")
         elif meteo == "pluvieux":
@@ -767,7 +793,7 @@
       <script type="text/template">
         ## Exemples d'utilisation du *Et* et du *Ou* logique
 
-        Avec la notation mathématique, nous pouvons utiliser `0 < x < 6`. En Python, nous devons séparer ces comparaisons.
+        Avec la notation mathématique, nous pouvons utiliser `0 < x < 6`. En Python, nous devrions séparer ces comparaisons.
 
         ```python
         >>> x = 5
@@ -907,8 +933,8 @@
 
         ```python
         >>> with open('./exercises/llc-chapters.csv') as chapters:
-        >>> for line in chapters:
-        ...     print(line)
+        >>>     for line in chapters:
+        ...         print(line)
         ...
         ```
 
@@ -920,14 +946,10 @@
       <script type="text/template">
         ## L'arrière-scène des boucles `for`
 
-        Si vous explorez la variable `chapters` dans votre console, vous remarquerez peut-être qu'elle possède une méthode nommée `.next()`. Elle effectue la même chose que la méthode `.readline()`. 
-
-        La boucle `for` fonctionne avec différents regroupements de données; la seule chose qu'elle demande en retour est la présence de la méthode `.next()`.
-
-        En dessous des couvertes, elle effectue quelque chose de similaire à:
+        En dessous des couvertes, la boucle `for` effectue quelque chose de similaire à:
 
         ```python
-        line = chapters.next()
+        line = next(chapters)
         # exécution de votre code dans la boucle
         # ...
         # traitement de la donnée suivante jusqu'à ce qu'il n'y ait plus de valeur
@@ -953,7 +975,7 @@
 
         Python possède plusieurs modules de base utiles &mdash; c'est du code déjà écrit qui ne demande qu'à être utilisé.
 
-        Aujourd'hui, nous utiliserons le module **csv** pour nous faciliter la vie avec les fichiers CSV et en apprendre d'avantage sur les activités de LLC en 2014.
+        Aujourd'hui, nous utiliserons le module **csv** pour nous faciliter la vie avec les fichiers CSV et en apprendre d'avantage sur les activités de LLC en 2015.
 
         Informations supplémentaires: https://docs.python.org/2/library/csv.html
 
@@ -1011,7 +1033,7 @@
         Nous pouvons maintenant obtenir une ligne à la fois:
 
         ```
-        >>>     chapter = chapters_data.next()
+        >>>     chapter = next(chapters_data)
         >>>     print(chapter)
         {'City': 'Vancouver', 'Chapter Lead(s)': 'Meghan', 'Province': 'BC'}
         >>>     type(chapter)
@@ -1198,7 +1220,7 @@
         
         Jusqu'ici, nous avons utilisé des exemples simples pour pratiquer ce que vous avez appris.
 
-        En 2014, les événements de Ladies Learning Code ont attirés presque 6500 participants et bénévoles. (sans compter les participants à plusieurs événements).
+        En 2015, les événements de Ladies Learning Code ont attirés presque 6500 participants et bénévoles. (sans compter les participants à plusieurs événements).
 
         Désirez-vous vraiment compter ces derniers ?
 
@@ -1262,7 +1284,7 @@
         ### Lire des fichiers dans une autre langue (comme le chinois)
 
         * L'encodage par défaut en Python 2.7 est le ASCII (Lettres et caractères de base)
-        * La plupart des textes sur internet avec des accents ou des caractères étrangés (Arabe, chinois, etc.) sont representés en [unicode](http://www.w3.org/International/questions/qa-what-is-encoding.en)
+        * La plupart des textes sur internet avec des accents ou des caractères étrangés (Arabe, chinois, etc.) sont representés en [Unicode](http://www.w3.org/International/questions/qa-what-is-encoding.en)
         * Vous pouvez installer le module [unicodecsv](https://pypi.python.org/pypi/unicodecsv/0.13.0) avec [pip](http://www.dabapps.com/blog/introduction-to-pip-and-virtualenv-python/) pour lire et écrire des accents et des caractères spéciaux dans des fichiers CSV.
 
       </script>
