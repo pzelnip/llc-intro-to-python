@@ -529,12 +529,20 @@
 
         Instead of just a 'Hello World' message on the screen, take it one step further and have Python say hello to anyone!
 
-        Try using the `raw_input()` function. This will get the data inputed by a user and **returns** that value back to you.
-
-        1. Give `raw_input()` a message to let the user know what information is being requested using this syntax (note the quotes):
+        The function `raw_input` in Python 2 (or `input` if you have installed Python 3) will get the data input by the user and **return* the value back to you.
+        
+        1. Give input function a message to let the user know what information is being requested using this syntax (note the quotes):
+        
+          Python 2
           ```python
           >>> raw_input("What's your name?")
-          ``` 
+          ```
+          
+          Python 3
+          ```python
+          >>> input("What's your name?")
+          ```
+        
         1. The user types a response and hits the **enter** key
         1. Whatever the user types is **returned** to you.
 
@@ -564,10 +572,21 @@
         
           Reminder, anything after the `#` symbol is just a comment.
 
+          Python 2: 
           ```python
           # Assign the raw_input value to a variable
           # Your program waits for the user to hit enter
           name = raw_input("Please enter your name: ")
+
+          # ... then continues to this line
+          print("Hello " + name)
+          ```
+
+          Python 3:
+          ```python
+          # Assign the input value to a variable
+          # Your program waits for the user to hit enter
+          name = input("Please enter your name: ")
 
           # ... then continues to this line
           print("Hello " + name)
@@ -667,8 +686,19 @@
 
         ```python
         # file: ex2_weather_advice.py
+        ```
+        
+        ```python
+        # Python 2:
         weather = raw_input("What is the weather? (cold, raining, etc.)")
+        ```
+        
+        ```python
+        # Python 3:
+        weather = input("What is the weather? (cold, raining, etc.)")
+        ```
 
+        ```python
         if weather == "cold":
             print("Wear a sweater!")
         elif weather == "raining":
@@ -911,8 +941,8 @@
 
         ```python
         >>> with open('./exercises/llc-chapters.csv') as chapters:
-        >>> for line in chapters:
-        ...     print(line)
+        >>>     for line in chapters:
+        ...         print(line)
         ...
         ```
         
@@ -926,14 +956,10 @@
       <script type="text/template">
         ## `for` loop behind the scenes
 
-        If you play around with the `chapters` variable in your console, you might notice that it has a `.next()` function which does the same thing as `.readline()`
-
-        `for` can work with many different collections of data, all it&rsquo;s looking for is that `.next()` function.
-
-        Behind the scenes, it&rsquo;s doing something roughly like
+        Behind the scenes, the for loop is doing something roughly like:
 
         ```python
-        line = chapters.next()
+        line = next(chapters)
         # Execute your code block
         # ...
         # Go back to get the next value and repeat until there are no more values
@@ -1013,7 +1039,7 @@
         Now, we can pull out one row at a time.
 
         ```
-        >>>     chapter = chapters_data.next()
+        >>>     chapter = next(chapters_data)
         >>>     print(chapter)
         {'City': 'Vancouver', 'Chapter Lead(s)': 'Meghan', 'Province': 'BC'}
         >>>     type(chapter)
