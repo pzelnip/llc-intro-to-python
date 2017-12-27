@@ -854,16 +854,176 @@
       </script>
     </section>
 
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        # Lunch!
+      </script>
+    </section>
+<!-- -------------------- -->
+<!-- Intro to lists -->
+<!-- -------------------- -->
+
+<section class="slide" data-markdown>
+  <script type="text/template">
+    ## Lists
+
+    When we have collections of similar things, we might store them in a **list**
+
+    ```python
+    weather_conditions = ['rainy', 'snowing', 'cloudy','sunny','foggy']
+
+    ```
+
+    ```python
+    provinces = ['BC', 'AB', 'SK','MB','ON','QC','NL,','NB','NS','PE','YT','NT','NU']
+
+   ```
+   ```python
+to_do_list = ['Water plants','Clean bathroom','Buy shoes','Solve climate change']
+   
+     ```
+
+   ```python
+prime_numbers = [2,3,5,7,11,13]
+
+  ```
+
+    In python, the items in the list can be different data types.
+
+    ```python
+    different_data_types = [3.14,'Canada', 22/7, 1729]
+    
+      ```
+
+  </script>
+</section>
+
+<section class="slide" data-markdown>
+  <script type="text/template">
+    ## Using Lists
+
+    Items in a list can be accessed one at a time.
+    
+    They are **indexed** (counted) starting at 0.
+
+    ```python
+     weather_conditions = ['rainy', 'snowing', 'cloudy','sunny','foggy']
+
+    ```
+    Try these:
+    ```python
+    weather_conditions[0]
+    weather_conditions[3]
+    weather_conditions[10]
+   ```
+   
+   What Happened?
+
+    ```python
+    Traceback (most recent call last):
+       File "<input>", line 1, in <module>
+    IndexError: list index out of range
+      ```
+Python cannot find weather_conditions[10] because it does not exist.
+
+
+  </script>
+</section>
+
+<section class="slide" data-markdown>
+  <script type="text/template">
+    ## Loops
+
+      One of the most powerful tools we have as programmers is having a computer repeat the same instruction for us many times.
+
+      Python can access each item in a list in order, and do something with each item.
+
+```python
+my_list = ['some','items']
+for member in my_list:
+   # do something
+   # python will do all of this indented code for each item
+   
+```
+Print all of the items in the list:        
+      ```python
+weather_conditions = ['rainy', 'snowing', 'cloudy','sunny','foggy']
+
+for condition in weather_conditions:
+  print condition
+      
+     ```
+
+Perform some math on each item in the list:
+     ```python
+     numbers = [5,11,66,22.5]
+     
+     for number in numbers:
+       result = number * 2
+       print str(number) +' x 2 = ' + str(result)
+           
+```
+
+</script>
+</section>
+
+<section class="slide" data-markdown>
+  <script type="text/template">
+    ## Counting
+
+As python accesses each item in a list, we can tell it to count how many items it has found.
+
+
+We can add `1` to the current value of a variable, and assign it back to the same variable. Python processes everything to the right of the `=` before assigning the result.
+
+
+Count the number of items on your to-do list:          
+      ```python
+number_of_todos = 0
+to_do_list = ['Water plants', 'Clean bathroom','Sweep floors','Buy Coffee','Organise books','Write a novel']
+
+for todos in to_do_list:
+  number_of_todos = number_of_todos + 1
+
+print number_of_todos
+     ```
+
+
+
+
+  </script>
+</section>
+
+
+<section class="slide" data-markdown>
+  <script type="text/template">
+    ## EXERCISE 4: SMART LOOPS (20 MINS)
+
+    Combine what you learned earlier about variables and conditionals (**if** statements) with what you just learned about loops.
+
+    Open the file `ex4_smart_loops.py`. 
+
+    The file contains a list with a lot of numbers in it. 
+
+    * count how many items are less than 50, and print it to the console
+    * count how many items are both greater than 500 and less than 1000, and print it to the console
+    * BONUS: count how many items are odd numbers, and print it to the console
+    (hint : https://docs.python.org/2/reference/expressions.html#binary-arithmetic-operations)
+
+  </script>
+</section>
+
+<section class="slide title full-monty">
+  <!-- Mandatory Monty Python reference -->
+  <h1 class="heading-bg"><span>And now for something completely different</span></h1>
+
+  <aside>Source: <a href="https://www.flickr.com/photos/nerdcoreblog/13995269592/">flickr.com/photos/nerdcoreblog</a></aside>
+</section>
+
 <!-- -------------------- -->
 <!-- Opening a file -->
 <!-- -------------------- -->
 
-    <section class="slide title full-monty">
-      <!-- Mandatory Monty Python reference -->
-      <h1 class="heading-bg"><span>And now for something completely different</span></h1>
-
-      <aside>Source: <a href="https://www.flickr.com/photos/nerdcoreblog/13995269592/">flickr.com/photos/nerdcoreblog</a></aside>
-    </section>
 
     <section class="slide" data-markdown>
       <script type="text/template">
@@ -880,7 +1040,6 @@
          with open('./exercises/llc-chapters.csv') as chapters:
              print(chapters.read())
 
-        # ... lots of file data ...
         ```
       </script>
     </section>
@@ -929,8 +1088,7 @@
 
         We've just seen how to print out one line of a time but what if you need to read all the lines in the file?
 
-        In programming, to perform the same action many times in a row, **loops** are used.
-        In Python, try using the `for` loop to print each of the rows in the file.
+        Try using the `for` loop to print each row in the file.
 
         Here's some sample code:
 
@@ -942,16 +1100,12 @@
         ```
 
 
-        More info: https://docs.python.org/2/tutorial/controlflow.html#for-statements
+       
       </script>
     </section>
 
 
-    <section class="slide title" data-markdown>
-      <script type="text/template">
-        # Lunch!
-      </script>
-    </section>
+
 
 <!-- ==================== -->
 <!-- Afternoon Content-->
@@ -1042,14 +1196,13 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Working in a `for` loop
+        ## Example: Working in a `for` loop
 
-        Earlier, we learned how `for` loops can repeat the same set of instructions. Let's take a look at this example below.
+        Earlier, we learned how `for` loops can repeat the same set of instructions. 
 
         * the `for` loop assigns *each row* to the `chapter` variable
         * group instructions together with the same indentation
         * all the instructions in the indented block are run for each `chapter`
-        * remember to press enter again after the last instruction in the for loop to execute it
 
         ```python
          import csv
@@ -1065,11 +1218,11 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Exercise 4: Find your chapter lead (15 mins)
+        ## Exercise 5 : Find your chapter lead (15 mins)
 
         You already have the tools you need to find your chapter lead(s) in `llc-chapters.csv`.
 
-        In the **exercises** folder, open **ex4_chapter_lead_finder.py** and follow the instructions listed in the comments. Try applying the concepts covered so far.
+        In the **exercises** folder, open **ex5_chapter_lead_finder.py** and follow the instructions listed in the comments. Try applying the concepts covered so far.
 
         ```python
         # Import the csv library
@@ -1093,16 +1246,7 @@
       <script type="text/template">
         ## Counting loops
 
-        Sometimes you want to keep track of the number of times something happened.
-
-        We can add `1` to the current value of a variable, and assign it back to the same variable. Python processes everything to the right of the `=` before assigning the result.
-
-        ```python
-        >>> count = 0
-        >>> count = count + 1
-        >>> print(count)
-        1
-        ```
+        
 
         Count the number of chapters in **llc-chapters.csv** by adding one each time it loops.
 
@@ -1115,7 +1259,7 @@
 
             count = 0
             for row in csv_data:
-               count += 1
+               count = count + 1
 
             print("There are " + str(count) + " chapters")
         ```
@@ -1149,7 +1293,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Exercise 5: Find chapters with co-leads (15 mins)
+        ## Exercise 6: Find chapters with co-leads (15 mins)
 
         In the **llc-chapters.csv** file, the `&` character is used to separate the co-lead names.
 
