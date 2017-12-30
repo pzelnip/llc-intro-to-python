@@ -752,6 +752,8 @@
       <script type="text/template">
         ## Testing with Math Comparison Operators
 
+        Create a new file called `comparison_operators.py` to use for the next section. 
+        
         Math operators can also be used to test numeric values. Here are a few we will use today.
 
         `>` greater than
@@ -839,7 +841,7 @@
 
         Instead of telling your program if it's cold, you can input the temperature and let it decide what to do.
 
-        * open the existing **ex3_smarter_weather.py** file
+        * open the existing `ex3_smarter_weather.py` file
         * use math comparison operators, `and`/`or` to complete the exercise
         * follow the instructions in the comments
         * feel free to choose your own temperatures and messages :)
@@ -915,7 +917,7 @@ prime_numbers = [2,3,5,7,11,13]
      weather_conditions = ['rainy', 'snowing', 'cloudy','sunny','foggy']
 
     ```
-    Try these:
+    Try these in the python console:
     ```python
     weather_conditions[0]
     weather_conditions[3]
@@ -961,9 +963,9 @@ for condition in weather_conditions:
 
 Perform some math on each item in the list:
      ```python
-     numbers = [5,11,66,22.5]
+    numbers = [5,11,66,22.5]
      
-     for number in numbers:
+    for number in numbers:
        result = number * 2
        print str(number) +' x 2 = ' + str(result)
            
@@ -1034,6 +1036,8 @@ print number_of_todos
       <script type="text/template">
         ## Opening a file
 
+        Open the file called `working_with_files.py`.
+
         Computer data is often stored in files such **.csv** (comma-separated values) files.
         These file types are used to represent spreadsheet-like data.
 
@@ -1042,10 +1046,14 @@ print number_of_todos
         When you open a file using the "with" syntax, that creates a new block and the file will be closed automatically for you as soon as you exit the block.
 
         ```python
-         with open('./exercises/llc-chapters.csv') as chapters:
+         with open('llc-chapters.csv') as chapters:
              print(chapters.read())
 
         ```
+
+        ![read csv](framework/img/workshop/read-csv-file.png) <!-- .element: width="45%" -->
+
+
       </script>
     </section>
 
@@ -1059,7 +1067,7 @@ print number_of_todos
         Let&rsquo;s try printing out a few individual lines using the example below.
 
         ```python
-         with open('./exercises/llc-chapters.csv') as chapters:
+        with open('llc-chapters.csv') as chapters:
              print(chapters.readline())
              print(chapters.readline())
              print(chapters.readline())
@@ -1098,7 +1106,7 @@ print number_of_todos
         Here's some sample code:
 
         ```python
-         with open('./exercises/llc-chapters.csv') as chapters:
+        with open('llc-chapters.csv') as chapters:
              for line in chapters:
                print(line)
 
@@ -1123,6 +1131,7 @@ print number_of_todos
         Python has many useful built in **libraries** &mdash; collections of pre-written code.
 
         Today we&rsquo;ll use the **csv** library to help us make more sense of the data contained in a CSV file and learn more about the LLC activities in 2015.
+        This library will help us read the data in the file and transform it into a form that is easier to work with.
 
         More info: https://docs.python.org/2/library/csv.html
 
@@ -1164,7 +1173,7 @@ print number_of_todos
 
         ```
          import csv
-         with open('./exercises/llc-chapters.csv') as chapters_file:
+         with open('llc-chapters.csv') as chapters_file:
              chapters_data = csv.DictReader(chapters_file)
         ```
 
@@ -1174,6 +1183,11 @@ print number_of_todos
              chapter = next(chapters_data)
              print(chapter)
         ```
+
+        What is this?
+        ```python
+        {'City': 'Vancouver', 'Chapter Lead(s)': 'Meghan', 'Province': 'BC'} 
+           ```
       </script>
     </section>
 
@@ -1181,15 +1195,26 @@ print number_of_todos
       <script type="text/template">
         ## Dictionaries
 
-        Using `DictReader` to print the values from the CSV file, outputs a `dict`ionary representing each row in the file, in *key: value pairs*, instead of comma-separated values.
+        Python used `DictReader` to read a row in the file and transform it into a **dictionary**, a bunch of *key: value pairs*.
 
-        Columns representing each city, can now be accessed with a keyword and the same for chapter leads and province.
-        <pre>
-          {'City': 'Vancouver',
-          'Chapter Lead(s)': 'Meghan',
-          'Province': 'BC'}
-        </pre>
+        This is just like a regular dictionary:
+         > **[python](http://www.dictionary.com/browse/python)** : any of several Old World boa constrictors of the subfamily Pythoninae, often growing to a length of more than 20 feet 
+        
+         The console printed out `chapter` like this:
+          ```python
+        {'City': 'Vancouver', 'Chapter Lead(s)': 'Meghan', 'Province': 'BC'} 
+           ```
 
+        But think of it like this: 
+        > **City**: 'Vancouver'
+
+        > **Chapter Lead(s)**: 'Meghan'
+
+        >  **Province**: 'BC'
+      
+
+        Python can 'look up' each value in a row just as you would the meaning of the word *python*.
+        
         ```python
          print(chapter['City'])
          print(chapter['Province'])
@@ -1211,7 +1236,7 @@ print number_of_todos
 
         ```python
          import csv
-         with open('./exercises/llc-chapters.csv') as chapters_file:
+         with open('llc-chapters.csv') as chapters_file:
              chapters = csv.DictReader(chapters_file)
              for chapter in chapters:
                        print(chapter['City'] + ', ' + chapter['Province'])
@@ -1227,7 +1252,7 @@ print number_of_todos
 
         You already have the tools you need to find your chapter lead(s) in `llc-chapters.csv`.
 
-        In the **exercises** folder, open **ex5_chapter_lead_finder.py** and follow the instructions listed in the comments. Try applying the concepts covered so far.
+        In the **exercises** folder, open `ex5_chapter_lead_finder.py` and follow the instructions listed in the comments. Try applying the concepts covered so far.
 
         ```python
         # Import the csv library
@@ -1313,7 +1338,7 @@ print number_of_todos
 
         ```
 
-        Create a new file, **ex5_coleaders.py**, and use what you've learned so far to find which chapter cities have co-leads.
+        Create a new file in the **exercises** folder called `ex5_coleaders.py`, and use what you've learned so far to find which chapter cities have co-leads.
 
         * Print a list of cities with co-leads
         * Count how many chapters have co-leads
