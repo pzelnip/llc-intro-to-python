@@ -35,10 +35,12 @@
     <h1>Bienvenue chez Ladies Learning Code!</h1>
       
     <div class="instructions">
-      <!-- Add wifi info here -->
-      <!-- <h2>Get Connected</h2>
-      <p>Network: <br>
-      Password: </p> -->
+      <!-- TODO: Add wifi info here -->
+      <!--
+      <h2>Branchez-vous</h2>
+      <p><strong>Wi-Fi :</strong> </p>
+      <p><strong>Mot de passe :</strong> </p>
+      -->
 
       <h2>À télécharger:</h2>
       <p>1. Fichier des apprenti(e)s: <a href="http://bitly.com/llc-python">http://bitly.com/llc-python</a> (fichier zip)</p>
@@ -71,14 +73,16 @@
           <span>Analyse de données avec Python pour les débutant(e)s</span>
         </h1>
         <!-- TODO: Fill in instructor details -->
-      <!--   <h2><span>with</span> Instructor Name</h2>
-      
-      <img class="instructor-img" src="http://cl.ly/image/0r3Q3H110G36/profile-generic.jpg" alt="instructor name">
-      <ul>
-        <li><i class="fa fa-envelope"></i><a href="mailto:">hello@email.com</a></li>
-        <li><i class="fa fa-desktop"></i><a href="#">mywebsite.com</a></li>
-        <li><i class="fa fa-twitter"></i><a href="http://twitter.com/">@twitter</a></li>
-      </ul> -->
+        <!--
+        <h2><span>with</span> Instructor Name</h2>
+
+        <img class="instructor-img" src="http://cl.ly/image/0r3Q3H110G36/profile-generic.jpg" alt="instructor name">
+        <ul>
+          <li><i class="fa fa-envelope"></i><a href="mailto:">hello@email.com</a></li>
+          <li><i class="fa fa-desktop"></i><a href="#">mywebsite.com</a></li>
+          <li><i class="fa fa-twitter"></i><a href="http://twitter.com/">@twitter</a></li>
+        </ul>
+        -->
         <div class="sponsor">
           <p>En partenariat avec</p>
           <img src="framework/img/telus-logo-white.svg" alt="Telus logo">
@@ -108,12 +112,13 @@
 
       * Les types
       * Les variables
-      * Les conditions &amp; la logique
-      * Lire un fichier
+      * Les conditions et la logique
+      * Les listes
       * Les boucles «for»
 
       ###Cet après-midi
 
+      * Lire un fichier
       * Les librairies
       * Les dictionnaires
       * La recherche de mots
@@ -126,7 +131,7 @@
         ## Qu'est-ce que la programmation ?
 
         * Simplement: la programmation consiste à donner des instructions à un ordinateur dans un format qu'il peut comprendre. 
-        * Les ordinateurs ont besoin d'instructions *très précises*
+        * Les ordinateurs ont besoin d'instructions *très précises*.
         * Les langages de programmation ont des syntaxes comme les langues humaines ont des règles de grammaire. 
 
         <br>
@@ -138,7 +143,6 @@
         *   Grande communauté
         *   Une syntaxe similaire à l'anglais
         *   Erreurs significatives, facile à déboguer
-
       </script>
     </section>
 
@@ -159,7 +163,6 @@
         ![](framework/img/workshop/logo-pinterest.png)
         ![](framework/img/workshop/logo-youtube.png)
         ![](framework/img/workshop/logo-theonion.png)
-
       </script>
     </section>
 
@@ -192,7 +195,7 @@
 
         On utilise un IDE pour écrire du code plus rapidement et faire moins d'erreurs.
         <br><br>
-        <span class="delayed">![That is awesome!](framework/img/workshop/awesome_i_hear_that_psych.gif) <!-- .element: style="width: 60%" --></span>
+        <span class="delayed">![Pas mal!](framework/img/workshop/not_bad_larsson.gif) <!-- .element: style="width: 60%" --></span>
       </script>
     </section>
 
@@ -210,9 +213,8 @@
 
         Aujourd'hui, vous travaillerez dans le dossier **exercices**. Le dossier **reference** contient les réponses à titre de &laquo;référence&raquo;.        
        
-       Les autres dossiers & fichiers vous serviront à faire fonctionner cette présentation. 
-       Évitez de les modifier !
-        
+        Les autres dossiers & fichiers vous serviront à faire fonctionner cette présentation.
+        Évitez de les modifier !
 
         ![](framework/img/workshop/pycharm-project3.png)
       </script>
@@ -261,15 +263,14 @@
         0
         ```
         Pourquoi `1 / 2 = 0`? Nous y reviendrons...
-
       </script>
     </section>
 
     <section class="slide" data-markdown>
       <script type="text/template">
         ## Les types de données
-        
-        Dans l'exemple précédent, on utilisait des nombres de type **entier** (<em>integers</em>), mais il y a plusieurs autres types de données.
+
+        Dans l'exemple précédent, on utilisait des nombres de type **entier** (<em>integer</em>), mais il y a plusieurs autres types de données.
 
         * Integer (`int`, nombre entier)
         * Float (`float`, nombre contenant des décimales)
@@ -294,12 +295,12 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Les Fonctions
+        ## Les fonctions
 
-        * Les fonctions sont des ensembles d'instructions qui peuvent être réutilisés
-        * Réutiliser des fonctions aide à réduire la redondance
-        * Les fonctions prennent des **arguments** et peuvent **retourner** des valeurs
-        
+        * Les fonctions sont des ensembles d'instructions qui peuvent être réutilisés.
+        * Réutiliser des fonctions aide à réduire la redondance.
+        * Les fonctions prennent des **arguments** et peuvent **retourner** des valeurs.
+
         ex: la fonction `ajout` prend `a` et `b` comme arguments et **retournera** le résultat.
 
         ```python
@@ -375,7 +376,6 @@
         Le premier `2` est une valeur de type **integer** (nombre entier), et le second `"2"` est une valeur de type **string**.
         
         Python ne sait pas comment additionner un nombre et une string: il renvoie donc une erreur.
-
       </script>
     </section>
 
@@ -404,7 +404,6 @@
         >>> print(float(1) / float(2))
         0.5
         ```
-
       </script>
     </section>
 
@@ -432,7 +431,6 @@
       </script>
     </section>
 
-
 <!-- -------------------- -->
 <!--Variables-->
 <!-- -------------------- -->
@@ -440,7 +438,7 @@
     <section class="slide" data-markdown>
       <script type="text/template">
         ## Les variables
-        * Elles sont utilisées pour stocker une valeur pour toutes les fois où elle va être utilisée
+        * Elles sont utilisées pour stocker une valeur pour toutes les fois où elle va être utilisée.
         * Les variables stockent des données dans la mémoire de l'ordinateur, et le nom de la variable est utilisé pour aller chercher leur valeur (comme un marque-page dans un livre).
         
         Utilisez le symbole (`=`) pour *assigner* une valeur à une variable.
@@ -671,7 +669,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Exercise 2: Vérificateur de température (10 mins)
+        ## Exercice 2: Vérificateur de température (10 minutes)
 
         Créez un nouveau fichier et appelez-le `ex2_conseil_meteo.py`.
         
@@ -702,7 +700,6 @@
             print("Fais comme tu veux :)")
         ```
         **Bonus: ** Essayez d'exécuter le fichier quelques fois pour tester vos conditions et les conseils de ce dernier. Tentez également de modifier les conditions ou d'en ajouter d'autres.
-
       </script>
     </section>
 
@@ -774,14 +771,14 @@
         * `or`: Une des expressions avant ou après ce mot clé doit être *vrai*
 
         ```python
-        meteo = "froid"
-        neige = True
+        >>> meteo = "froid"
+        >>> neige = True
 
         >>> if meteo == "froid" and neige == True:
-        ...     print("mets un foulard et un manteau d'hiver")
+        ...     print("mets un foulard et un manteau d’hiver")
         ...
+        mets un foulard et un manteau d’hiver
 
-        mets un foulard et un manteau d'hiver
         >>> if meteo == "pluvieux" or neige == True:
         ...     print("apporte une deuxième paire de bas")
         ...
@@ -817,7 +814,6 @@
         ...
         # Rien ne sera affiché
         ```
-
       </script>
     </section>
 
@@ -842,10 +838,153 @@
         else:
             # Portez votre gilet chaud préféré et révez à la plage
         ```
-
-
       </script>
     </section>
+
+<!-- -------------------- -->
+<!-- Intro to lists -->
+<!-- -------------------- -->
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Les listes
+
+        Lorsque nous avons une collection d'éléments semblables, nous pouvons les stocker dans une **liste**.
+
+        ```python
+        conditions_de_meteo = ['pluvieux', 'neigeux', 'nuageux', 'ensoleillé', 'brumeux']
+        ```
+        ```python
+        provinces = ['BC', 'AB', 'SK', 'MB', 'ON', 'QC', 'NL', 'NB', 'NS', 'PE', 'YT', 'NT', 'NU']
+        ```
+        ```python
+        taches_a_faire = ['Arroser les plantes', 'Nettoyer la toilette', 'Acheter des souliers']
+        ```
+        ```python
+        nombre_premiers = [2, 3, 5, 7, 11, 13]
+        ```
+
+        En Python, les items d'une liste peuvent être de différents types.
+
+        ```python
+        donnes_de_differents_types = [3.14, 'Canada', 22/7, 1729]
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Utiliser les listes
+
+        Les éléments d'une liste peuvent être accédés directement.
+
+        Ils sont **indexés** (comptés) à partir de 0.
+
+        ```python
+        >>> conditions_de_meteo = ['pluvieux', 'neigeux', 'nuageux', 'ensoleillé', 'brumeux']
+        ```
+
+        Essayez dans la console:
+
+        ```python
+        >>> conditions_de_meteo[0]
+        >>> conditions_de_meteo[3]
+        >>> conditions_de_meteo[10]
+        ```
+
+        Que s'est-il passé?
+
+        ```python
+        Traceback (most recent call last):
+           File "<input>", line 1, in <module>
+        IndexError: list index out of range
+        ```
+        Python n'arrive pas à trouver `conditions_de_meteo[10]`, car l'élément n'existe pas.
+      </script>
+    </section>
+
+<!-- -------------------- -->
+<!-- Intro to loops -->
+<!-- -------------------- -->
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Les boucles
+
+        Un des outils puissants que nous avons en développement est un ordinateur qui effectue les mêmes instructions pour nous plusieurs fois.
+
+        Python peut accéder chaque élément de la liste en ordre et manipuler chaque élément.
+        ```python
+        ma_liste = ['des', 'éléments']
+        for membre in ma_liste:
+           # instruction pour faire quelque chose
+           # Python exécutera toutes les instructions indentées à ce niveau pour chaque élément de la liste
+        ```
+
+        Imprimer tous les éléments de la liste:
+        ```python
+        >>> conditions_de_meteo = ['pluvieux', 'neigeux', 'nuageux', 'ensoleillé', 'brumeux']
+        ... for condition in conditions_de_meteo:
+        ...   print condition
+        ```
+
+        Effectuer des calculs mathématiques avec chaque élément de la liste:
+        ```python
+        >>> nombres = [5,11,66,22.5]
+        ... for nombre in nombres:
+        ...   resultat = nombre * 2
+        ...   print str(nombre) +' x 2 = ' + str(resultat)
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Compter
+
+        Au fur et à mesure que Python accède à un élément de la liste, il est possible d'indiquer Python de compter les éléments trouvés.
+
+        Nous pouvons ajouter `1` à la valeur actuelle de la variable et ré-assigner la somme à la même variable. Le calcul est effectué à droite de `=` avant d'assigner la nouvelle valeur à la variable.
+
+        Compter le nombre d'éléments de la liste des tâches à faire:
+        ```python
+        nombre_de_taches = 0
+        taches_a_faire = ['Arroser les plantes','Nettoyer la toilette','Acheter des souliers','Yoga']
+
+        for tache in taches_a_faire:
+          nombre_de_taches = nombre_de_taches + 1
+
+        print nombre_de_taches
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Exercice 4: Boucles intelligentes (20 minutes)
+
+        Combinez vos connaissances sur les variables, les conditions (**if**) et les boucles.
+
+        Ouvrez le fichier **ex4_boucles_intelligentes.py** dans le répertoire **exercises/fr**
+
+        Le fichier contient une longue liste de nombres.
+
+        * comptez combien de nombres sont inférieurs à 50 et imprimer le résultat
+        * comptez combien de nombres sont plus grands que 500 et moins que 1000 et imprimer le résultat
+        * BONUS: comptez combien de nombres sont impairs et imprimer le résultat
+        (indice : https://docs.python.org/2/reference/expressions.html#binary-arithmetic-operations)
+      </script>
+    </section>
+
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        # Dîner !
+      </script>
+    </section>
+
+<!-- ==================== -->
+<!-- Afternoon Content-->
+<!-- ==================== -->
 
 <!-- -------------------- -->
 <!-- Opening a file -->
@@ -862,15 +1001,15 @@
       <script type="text/template">
         ## Ouverture d'un fichier
 
-        Des données dans un ordinateur sont souvent sauvegardés dans des fichiers comme les fichiers **.csv**.
+        Des données dans un ordinateur sont souvent sauvegardées dans des fichiers comme les fichiers **.csv**.
         Ces fichiers sont utilisés pour des données tabulaires.
 
         Regardons l'exemple ci-dessous pour connaître comment ouvrir un fichier en Python et afficher son contenu dans votre écran.
 
         ```python
         >>> with open('./exercises/llc-chapters.csv') as chapters:
-        >>>     print(chapters.read())
-        >>>
+        ...   print(chapters.read())
+        ...
         # Lorsque vous en avez terminé avec le fichier, c'est une bonne idée de le fermer
         ```
       </script>
@@ -888,13 +1027,13 @@
 
         ```python
         >>> with open('./exercises/llc-chapters.csv') as chapters:
-        >>>     print(chapters.readline())
+        ...   print(chapters.readline())
+        ...   print(chapters.readline())
+        ...   print(chapters.readline())
         City,Province,Chapter Lead(s)
 
-        >>>     print(chapters.readline())
         Vancouver,BC,Meghan
 
-        >>>     print(chapters.readline())
         Calgary,AB,Darcie
         ```
       </script>
@@ -934,8 +1073,8 @@
 
         ```python
         >>> with open('./exercises/llc-chapters.csv') as chapters:
-        >>>     for line in chapters:
-        ...         print(line)
+        ...   for line in chapters:
+        ...     print(line)
         ...
         ```
 
@@ -959,16 +1098,6 @@
         Nous utiliserons la boucle `for` dans les exercices qui suivent pour travailler avec des fichiers plus volumineux.
       </script>
     </section>
-
-    <section class="slide title" data-markdown>
-      <script type="text/template">
-        # Dîner !
-      </script>
-    </section>
-
-<!-- ==================== -->
-<!-- Afternoon Content-->
-<!-- ==================== -->
 
     <section class="slide" data-markdown>
       <script type="text/template">
@@ -1028,13 +1157,13 @@
         ```
         >>> import csv
         >>> with open('./exercises/llc-chapters.csv') as chapters_file:
-        >>>     chapters_data = csv.DictReader(chapters_file)
+        ...   chapters_data = csv.DictReader(chapters_file)
+        ...   chapter = next(chapters_data)
         ```
 
         Nous pouvons maintenant obtenir une ligne à la fois:
 
         ```
-        >>>     chapter = next(chapters_data)
         >>>     print(chapter)
         {'City': 'Vancouver', 'Chapter Lead(s)': 'Meghan', 'Province': 'BC'}
         >>>     type(chapter)
@@ -1076,10 +1205,10 @@
         ```python
         >>> import csv
         >>> with open('./exercises/llc-chapters.csv') as chapters_file:
-        >>>     chapters = csv.DictReader(chapters_file)
-        >>>     for chapter in chapters:
-        ...         print(chapter['City'] + ', ' + chapter['Province'])
-        ...         print('    ' + chapter['Chapter Lead(s)'])
+        ...   chapters = csv.DictReader(chapters_file)
+        ...     for chapter in chapters:
+        ...       print(chapter['City'] + ', ' + chapter['Province'])
+        ...       print('    ' + chapter['Chapter Lead(s)'])
         ...
         Vancouver, BC
             Meghan
@@ -1092,11 +1221,11 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Exercise 4: Trouvez la personne responsable de votre chapitre (15 minutes)
+        ## Exercice 5: Trouvez la personne responsable de votre chapitre (15 minutes)
 
         Vous possédez maintenant tous les outils nécessaires pour trouver le ou les responsables dans le fichier `llc-chapters.csv`.
 
-        Dans le dossier **exercices**, ouvrez **fr/ex4_responsable_de_chapitre.py** and suivez les instructions qui s'y trouvent en commentaire.
+        Dans le dossier **exercices**, ouvrez **fr/ex5_responsable_de_chapitre.py** et suivez les instructions qui s'y trouvent en commentaire.
 
         Essayez d'appliquer ce que vous avez appris jusqu'ici.
 
@@ -1129,26 +1258,26 @@
         Python exécute tout ce qui se trouve à la droite du `=` avant d'assigner son résultat.
 
         ```python
-        >>> count = 0
-        >>> count = count + 1
-        >>> print(count)
+        >>> compteur = 0
+        >>> compteur = compteur + 1
+        >>> print(compteur)
         1
         ```
 
         Voici comment compter le nombre de chapitres existants dans **llc-chapters.csv** en additionnant la valeur `1` à chaque itération de la boucle.
 
         ```python
-        # file: exercises/demo_loop_count.py
+        # fichier: exercises/fr/demo_compteur_boucle.py
         import csv
 
-        with open('llc-chapters.csv') as csv_file:
-            csv_data = csv.DictReader(csv_file)
+        with open('../llc-chapters.csv') as csv_file:
+          csv_data = csv.DictReader(csv_file)
 
-            count = 0
-            for row in csv_data:
-                count += 1
+          count = 0
+          for row in csv_data:
+            count += 1
 
-            print("There are " + str(count) + " chapters")
+          print("Il y a " + str(count) + " chapitres")
         ```
       </script>
     </section>
@@ -1183,7 +1312,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Exercise 5: Trouver les chapitres ayant un ou une co-responsable (15 minutes)
+        ## Exercice 6: Trouver les chapitres ayant un ou une co-responsable (15 minutes)
 
         Dans le fichier **llc-chapters.csv**, le caratère `&` est utilisé pour séparer les noms des co-responsables.
 
@@ -1218,31 +1347,31 @@
       <script type="text/template">
         ## Visez haut
 
-        
         Jusqu'ici, nous avons utilisé des exemples simples pour pratiquer ce que vous avez appris.
 
         En 2015, les événements de Ladies Learning Code ont attirés presque 6500 participants et bénévoles. (sans compter les participants à plusieurs événements).
 
         Désirez-vous vraiment compter ces derniers ?
 
-          ![oh no - laverne cox](framework/img/workshop/oh-no-laverne.gif) <!-- .element: width="45%" -->
+        ![oh no - laverne cox](framework/img/workshop/oh-no-laverne.gif) <!-- .element: width="45%" -->
 
         Les ordinateurs sont très performants pour exécuter des tâches répétitives et ce, sans injection intraveineuse de café.
-
       </script>
     </section>
+
 <!-- -------------------- -->
 <!-- Begin final exercises -->
 <!-- -------------------- -->
+    
     <section class="slide" data-markdown>
       <script type="text/template">
         ## Dernier exercice !
 
         Dans le but de promouvoir **National Learn to Code Day 2015**, ainsi que mesurer son succès par rapport à 2014, nous aurons besoin de quelques statistiques:
 
-        * Le nombre de gens qui se sont inscrits à "La journée nationale d'apprentissage de la programmation"
+        * le nombre de gens qui se sont inscrits à "National Learn to Code Day"
         * le nombre total de gens inscrits à "Kids Learning Code" et/ou à "Girls Learning Code"
-        * le nombre total de gens impliqués dans le "National Learn to Code day" pour les jeunes
+        * le nombre total de gens impliqués dans le "National Learn to Code Day" pour les jeunes
 
         **Si c'est trop facile pour vous, allez à la page suivante pour un exercice en bonus.**
       </script>
@@ -1250,7 +1379,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Exercise bonus: un hackaton de données ouvertes
+        ## Exercice bonus: un hackaton de données ouvertes
 
         Si vous désirez utiliser une autre source de données, il en existe des publiques !
         
@@ -1267,7 +1396,6 @@
 
         Prenez les données des [cotes de consommation de carburant](http://ouvert.canada.ca/data/fr/dataset/98f1a129-f628-4ce4-b24d-6f16bf24dd64).
         Essayez de trouver tous les véhicules qui nécessitent moins de 10 litres d'essence au 100 km (automobiles vertes et moins dispendieuses à utiliser).
-
       </script>
     </section>
 
@@ -1287,7 +1415,6 @@
         * L'encodage par défaut en Python 2.7 est le ASCII (Lettres et caractères de base)
         * La plupart des textes sur internet avec des accents ou des caractères étrangés (Arabe, chinois, etc.) sont representés en [Unicode](http://www.w3.org/International/questions/qa-what-is-encoding.en)
         * Vous pouvez installer le module [unicodecsv](https://pypi.python.org/pypi/unicodecsv/0.13.0) avec [pip](http://www.dabapps.com/blog/introduction-to-pip-and-virtualenv-python/) pour lire et écrire des accents et des caractères spéciaux dans des fichiers CSV.
-
       </script>
     </section>
 
@@ -1330,15 +1457,17 @@
         <span>Analyse de données avec Python</span><br>
         <span>pour les débutant(e)s</span>
       </h2>
-      <!-- <h3><span>with</span> Instructor Name</h3>
+      <!-- TODO: Fill in instructor details -->
+      <!--
+      <h3><span>with</span> Instructor Name</h3>
 
-       <img class="instructor-img" src="http://cl.ly/image/0r3Q3H110G36/profile-generic.jpg" alt="instructor name">
+      <img class="instructor-img" src="http://cl.ly/image/0r3Q3H110G36/profile-generic.jpg" alt="instructor name">
       <ul>
         <li><i class="fa fa-envelope"></i><a href="mailto:">hello@email.com</a></li>
         <li><i class="fa fa-desktop"></i><a href="#">mywebsite.com</a></li>
         <li><i class="fa fa-twitter"></i><a href="http://twitter.com/">@twitter</a></li>
       </ul>
- -->
+      -->
       <p class="attribution">Slide presentation created with <a href="https://github.com/LeaVerou/csss">Lea Verou&rsquo;s CSS-based SlideShow System</a> and <a href="http://lab.hakim.se/reveal-js/">reveal.js</a>.</p>
     </section>
 
