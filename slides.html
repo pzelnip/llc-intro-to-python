@@ -47,11 +47,10 @@
         <li>unzip the learner file download (<em>extract all</em> if you’re on a PC)</li>
         <li>open <strong>slides.html</strong> in your browser to view the presentation</li>
       </ul>
-      <p>Install Python 2.7.x</p>
+      <p>Install Python 3.6.x</p>
       <ul>
         <li>Windows - <a href="https://www.python.org/downloads/windows/">https://www.python.org/downloads/windows/</a></li>
-        <li>Mac - pre-installed. Go to <strong>Applications &gt; Utilities &gt; Terminal</strong><br>
-          In the terminal window type "python" to confirm installation.</li>
+        <li>Mac - <a href="https://www.python.org/downloads/mac-osx/">https://www.python.org/downloads/mac-osx/</a></li>
       </ul>
       <p>PyCharm Educational Edition<br>
         <a href="https://www.jetbrains.com/pycharm-educational">https://www.jetbrains.com/pycharm-educational</a>
@@ -109,11 +108,12 @@
       * Types
       * Variables
       * Conditionals &amp; Logic
-      * Reading a file
-      * For loops
+      * Lists
+      * Loops
 
       ###Afternoon
 
+      * Working with files
       * Libraries
       * Dictionaries
       * Finding &amp; counting patterns
@@ -181,7 +181,7 @@
 
       You will need:
 
-      1. **Python 2.7.x installed** ( [Mac](https://www.python.org/downloads/), [Windows](https://www.python.org/downloads/windows/) )
+      1. **Python 3.6.x installed** ( [Mac](https://www.python.org/downloads/), [Windows](https://www.python.org/downloads/windows/) )
       1. **[PyCharm Educational Edition](https://www.jetbrains.com/pycharm-educational/)**
       1. [Learner files from LLC (containing the exercise and reference files)](https://github.com/ladieslearningcode/llc-intro-to-python/archive/master.zip).
         * make sure the **llc-intro-to-python-master.zip** file has been unzipped (and extracted for PC users) so you can access the contents of the folder
@@ -193,7 +193,7 @@
 
         Use IDEs to write code faster with fewer mistakes.
         <br><br>
-        ![That is awesome!](framework/img/workshop/use_the_force.gif) <!-- .element: style="width: 60%" -->
+        ![Use the force!](framework/img/workshop/use_the_force.gif) <!-- .element: style="width: 60%" -->
       </script>
     </section>
 
@@ -258,9 +258,14 @@
 
         ```
         >>> 1 / 2
-        0
+        0.5
         ```
-        Why is `1 / 2 = 0`? We&rsquo;ll come back to that.
+
+        ```
+        >>> 2 ** 3
+        8
+        ```
+     
 
       </script>
     </section>
@@ -281,13 +286,13 @@
 
         ```
         >>> type("hello")
-        <type 'str'>
+        <class 'str'>
 
         >>> type(42)
-        <type 'int'>
+        <class 'int'>
 
         >>> type(3.14159)
-        <type 'float'>
+        <class 'float'>
         ```
       </script>
     </section>
@@ -300,19 +305,12 @@
         * Reusing functions helps to reduce redundancy
         * Function can take **arguments** and can **return** values
 
-        e.g. the `add` function takes `a` and `b` as arguments and will **return** the result
+        [todo insert picture]
 
-        ```python
-        >>> def add(a, b):
-        ...     return a + b
-        ...
-        >>> add(1, 2)
-        3
-        >>> add(3, 4)
-        7
-        ```
+        ![goat](https://pbs.twimg.com/media/DT6OztEVoAAIa6t.jpg "I need a picture")
+        
 
-        It is possible to create your own but today's exercises will use functions provided by Python and its libraries.
+        It is possible to [create your own](https://docs.python.org/3/tutorial/controlflow.html#defining-functions) but today's exercises will use functions provided by Python and its libraries.
       </script>
     </section>
 
@@ -332,6 +330,11 @@
         ```
         >>> print(2 + 2)
         4
+        ```
+
+        ```
+        >>> print("2 + 2")
+        2 + 2
         ```
       </script>
     </section>
@@ -396,15 +399,17 @@
         >>> print(2 + int("2"))
         4
         ```
-
-        <br>
-        Remember the `1/2 = 0` example? When Python divides two integers, it rounds the result down to the nearest integer (in this case 0).
-
-        Integer **types** are whole numbers (no decimals), so to be more precise, `float()` can be used to include decimals.
+        
+        But only if python knows how to transform the input to the `int()` function :
         ```
-        >>> print(float(1) / float(2))
-        0.5
+        >>> print(2 + int("two"))
+        Traceback (most recent call last):
+        File "<input>", line 1, in <module>
+      ValueError: invalid literal for int() with base 10: 'two'
+      
+      
         ```
+
 
       </script>
     </section>
@@ -444,23 +449,40 @@
     <section class="slide" data-markdown>
       <script type="text/template">
         ## Variables
+
+        ![I need a picture](https://pbs.twimg.com/media/DT6OztEVoAAIa6t.jpg "I need a picture")
+        
         * Used to store a value to use whenever you need it
         * Variables store data in the computer&rsquo;s memory and a **variable name** is used to fetch their value (kind of like a bookmark in a book)
-        * Use the equal (`=`) symbol to *assign* a value to a variable
+        
+      </script>
+    </section>
 
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Variables (Continued)
+        
+         Use the equal (`=`) symbol to *assign* a value to a variable.
+
+        ```python
+        >>> x = 5
+        >>> print(x)
+        5
+        ```
+        Python can do math with variables: 
         ```python
         >>> x = 5
         >>> y = 4
         >>> x * y
         20
         ```
-
+        You can store almost anything in a variable, including a string:
         ```python
         >>> today = "Saturday"
         >>> print("Today is " + today)
         Today is Saturday
         ```
-        You can store almost anything in a variable.
+        
       </script>
     </section>
 
@@ -471,7 +493,6 @@
         Variables can be changed after the initial declaration by "reassigning" them.
 
         ```python
-        # Remember, we've already set x = 5 and y = 4
         >>> y = 10
         >>> x * y
         ```
@@ -530,16 +551,10 @@
 
         Instead of just a 'Hello World' message on the screen, take it one step further and have Python say hello to anyone!
 
-        The function `raw_input` in Python 2 (or `input` if you have installed Python 3) will get the data input by the user and **return* the value back to you.
+        The function `input()` will get the data input by the user and **return** the value back to you.
 
-        1. Give input function a message to let the user know what information is being requested using this syntax (note the quotes):
+        1. Give input function a message to let the user know what information is being requested using this syntax :
 
-          Python 2
-          ```python
-          >>> raw_input("What's your name?")
-          ```
-
-          Python 3
           ```python
           >>> input("What's your name?")
           ```
@@ -547,9 +562,15 @@
         1. The user types a response and hits the **enter** key
         1. Whatever the user types is **returned** to you.
 
-        Try it in your console. It will look something like this:
+        Try a few examples in your console, adding your own questions.
+        
+        ```python
+        >>> input("What is the temperature outside?")
+        ```
+        ```python
+        >>> input("Who let the dogs out?")
+        ```
 
-        ![](framework/img/workshop/raw_input.gif)
 
 
       </script>
@@ -563,7 +584,7 @@
 
         1. Right-click (or two-finger tap) on the **exercises** folder to create a new file. Then select **New > Python File**
 
-          ![Create a new Python File](./framework/img/workshop/new-file-mac.png)
+          ![Create a new Python File](./framework/img/workshop/new-file.png)
 
         1. Enter the name `ex1_hello_world.py` in the popup box.
 
@@ -573,17 +594,6 @@
 
           Reminder, anything after the `#` symbol is just a comment.
 
-          Python 2:
-          ```python
-          # Assign the raw_input value to a variable
-          # Your program waits for the user to hit enter
-          name = raw_input("Please enter your name: ")
-
-          # ... then continues to this line
-          print("Hello " + name)
-          ```
-
-          Python 3:
           ```python
           # Assign the input value to a variable
           # Your program waits for the user to hit enter
@@ -620,10 +630,31 @@
 <!-- Conditionals & Booleans -->
 <!-- -------------------- -->
 
-    <section class="slide" data-markdown>
+ <section class="slide" data-markdown>
       <script type="text/template">
         ## Conditionals &amp; Logic
-        The program we just wrote ran straight from top to bottom. What if the program could decide what to do instead?  `if` statements can be used to execute different sets of instructions based on specific conditions.
+        
+        When you get ready in the morning you probably check the weather to decide what to wear.
+
+        ![Getting Dressed!](framework/img/workshop/weather.gif) <!-- .element: style="width: 25%" -->
+
+       
+        * Is it cold outside? Wear a sweater        
+        * Is it raining? Bring an umbrella
+        
+        When you do this you are evaluating a **condition** for true/false value and then making a decision.
+        Python can do this too.
+       
+
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Conditionals &amp; Logic (Continued)
+        The program we just wrote ran straight from top to bottom. What if the program could decide what to do instead? 
+        
+        `if` statements used to execute different sets of instructions based on specific conditions.
 
         Each `if` statement contains a test. The indented block is the code that will run if the test is `True` and looks something like this:
 
@@ -683,16 +714,12 @@
 
         Use the code snippet below as a reference but try to type it out rather than copy-paste to get used to the syntax.
 
-        Note the whitespace. Python uses indentation to signify which block of code belongs inside the `if` or `else`.
+        Note the whitespace. **Python uses indentation to signify which block of code belongs inside the `if` or `else`.**
 
         ```python
         # file: ex2_weather_advice.py
         ```
 
-        ```python
-        # Python 2:
-        weather = raw_input("What is the weather? (cold, raining, etc.)")
-        ```
 
         ```python
         # Python 3:
@@ -750,39 +777,9 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Testing with Math Comparison Operators
-
-        Create a new file called `comparison_operators.py` to use for the next section. 
-        
-        Math operators can also be used to test numeric values. Here are a few we will use today.
-
-        `>` greater than
-        `<` less than
-        `>=` greater than or equal to
-        `<=` less than or equal to
-
-        Try:
-        ```python
-         x = 5
-         print(x > 5)
-         print(x >= 5)
-
-
-         if x >= 5:
-             print("x is greater than or equal to 5")
-         else:
-             print("x is less than 5")
-
-
-        ```
-      </script>
-    </section>
-
-    <section class="slide" data-markdown>
-      <script type="text/template">
         ## And / Or
 
-        Sometimes, you can&rsquo;t neatly capture your conditions with one expression. You may need to combine multiple expressions to determine what to do next.
+        Sometimes, you can&rsquo;t neatly capture your conditions with one expression. You may need to combine multiple tests to determine what to do next.
 
         `and`: both things must be true
         `or`: either one, or both things must be true
@@ -804,7 +801,39 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Examples with and/or
+        ## Comparison Operators
+
+        Create a new file called `comparison_operators.py` to use for the next section. 
+        
+        Math operators can also be used to test numeric values. Here are a few we will use today.
+
+        `>` greater than
+
+        `<` less than
+
+        `>=` greater than or equal to
+
+        `<=` less than or equal to
+
+        Try:
+        ```python
+         x = 5
+         print(x > 5)
+         print(x >= 5)
+
+         if x >= 5:
+             print("x is greater than or equal to 5")
+         else:
+             print("x is less than 5")
+
+
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Math with and/or
 
         Try these examples with multiple conditions.
 
@@ -823,6 +852,8 @@
 
         ```
 
+        **Bonus: **
+
         Check the type of a variable:
         ```python
          if type(x) == float or type(x) == int:
@@ -830,7 +861,7 @@
 
         ```
 
-        Bonus: Change the value stored in `x` to a string and try that last one again.
+        Change the value stored in `x` to a string and try that last one again.
         How can you change the test to print out something if x is a string?
       </script>
     </section>
@@ -841,23 +872,11 @@
 
         Instead of telling your program if it's cold, you can input the temperature and let it decide what to do.
 
-        * open the existing `ex3_smarter_weather.py` file
-        * use math comparison operators, `and`/`or` to complete the exercise
-        * follow the instructions in the comments
-        * feel free to choose your own temperatures and messages :)
-
-        ```
-        # if the weather is greater than or equal to 25 degrees
-        if [replace this with the right condition]:
-            print("Go to the beach!")
-        # the weather is less than 25 degrees AND greater than 15 degrees
-        elif [replace this with the right conditions]:
-            # Print "Still warm enough for ice cream!"
-        else:
-            # Print "Wear a sweater and dream of beaches."
-        ```
-
-
+        * Open the existing `ex3_smarter_weather.py` file
+        * We provided the input to get the temperature from the user 
+        * Use math comparison operators, `and`/`or` to complete the exercise
+        * Follow the instructions in the comments
+        * Feel free to choose your own temperatures and messages :)
       </script>
     </section>
 
@@ -874,24 +893,32 @@
   <script type="text/template">
     ## Lists
 
-    When we have collections of similar things, we might store them in a **list**
+    When we have collections of similar things, we might store them in a **list**.
+
+    To create a list, type a name, then `=`, then put the items in square brackets.
+    
+   ```python
+  the_name_of_the_list = ['items', 'separated', 'by','commas'] 
+    ```
+
+    Examples: 
 
     ```python
-    weather_conditions = ['rainy', 'snowing', 'cloudy','sunny','foggy']
+     weather_conditions = ['rainy', 'snowing', 'cloudy','sunny','foggy']
 
     ```
 
     ```python
-    provinces = ['BC', 'AB', 'SK','MB','ON','QC','NL,','NB','NS','PE','YT','NT','NU']
+     provinces = ['BC', 'AB', 'SK','MB','ON','QC','NL,','NB','NS','PE','YT','NT','NU']
 
    ```
    ```python
-to_do_list = ['Water plants','Clean bathroom','Buy shoes','Solve climate change']
+    to_do_list = ['Water plants','Clean bathroom','Buy shoes','Become Prime Minister', 'Solve climate change']
    
-     ```
+   ```
 
    ```python
-prime_numbers = [2,3,5,7,11,13]
+    prime_numbers = [2,3,5,7,11,13]
 
   ```
 
@@ -901,6 +928,8 @@ prime_numbers = [2,3,5,7,11,13]
     different_data_types = [3.14,'Canada', 22/7, 1729]
     
       ```
+      
+      
 
   </script>
 </section>
@@ -914,24 +943,24 @@ prime_numbers = [2,3,5,7,11,13]
     They are **indexed** (counted) starting at 0.
 
     ```python
-     weather_conditions = ['rainy', 'snowing', 'cloudy','sunny','foggy']
+    >>> weather_conditions = ['rainy', 'snowing', 'cloudy','sunny','foggy']
 
     ```
     Try these in the python console:
     ```python
-    weather_conditions[0]
-    weather_conditions[3]
-    weather_conditions[10]
+    >>> weather_conditions[0]
+    >>> weather_conditions[3]
+    >>> weather_conditions[10]
    ```
    
-   What Happened?
+   What happened?
 
     ```python
     Traceback (most recent call last):
        File "<input>", line 1, in <module>
     IndexError: list index out of range
       ```
-Python cannot find weather_conditions[10] because it does not exist.
+Python cannot find `weather_conditions[10]` because it does not exist.
 
 
   </script>
@@ -943,33 +972,51 @@ Python cannot find weather_conditions[10] because it does not exist.
 
       One of the most powerful tools we have as programmers is having a computer repeat the same instruction for us many times.
 
-      Python can access each item in a list in order, and do something with each item.
+      ![Power](framework/img/workshop/power.gif)
+
+      Python can access each item in a list in order, and do something with each item. We call this **looping** through the list.
 
 ```python
 my_list = ['some','items']
-for member in my_list:
+for item in my_list:
    # do something
    # python will do all of this indented code for each item
-   
+              
 ```
-Print all of the items in the list:        
+
+</script>
+</section>
+
+<section class="slide" data-markdown>
+  <script type="text/template">
+    ## Loop Through a List
+
+Create a new file in the exercises folder called `loops.py` and try these examples.
+
+### Example 1
+Print all of the items in a list:        
       ```python
 weather_conditions = ['rainy', 'snowing', 'cloudy','sunny','foggy']
 
 for condition in weather_conditions:
-  print condition
+  print("The weather is " + condition)
       
      ```
 
-Perform some math on each item in the list:
+Try adding more weather conditions to the list and run your program again.
+
+### Example 2
+Python can do more than just print things out. It can perform some math on each item in a list:
      ```python
     numbers = [5,11,66,22.5]
      
     for number in numbers:
        result = number * 2
-       print str(number) +' x 2 = ' + str(result)
+       print (str(number) +' x 2 = ' + str(result))
            
 ```
+
+Try changing the calculation in the loop and run your program again.
 
 </script>
 </section>
@@ -978,18 +1025,18 @@ Perform some math on each item in the list:
   <script type="text/template">
     ## Counting
 
+
 As python accesses each item in a list, we can tell it to count how many items it has found.
 
 
 We can add `1` to the current value of a variable, and assign it back to the same variable. Python processes everything to the right of the `=` before assigning the result.
 
-
-Count the number of items on your to-do list:          
+Create a new file in the exercises folder called `counting.py` and try counting the number of items on your to-do list:          
       ```python
 number_of_todos = 0
 to_do_list = ['Water plants', 'Clean bathroom','Sweep floors','Buy Coffee','Organise books','Write a novel']
 
-for todos in to_do_list:
+for todo in to_do_list:
   number_of_todos = number_of_todos + 1
 
 print number_of_todos
@@ -1036,9 +1083,9 @@ print number_of_todos
       <script type="text/template">
         ## Opening a file
 
-        Open the file called `working_with_files.py`.
+        Open the file called `working_with_files.py` and use it for the examples in this section.
 
-        Computer data is often stored in files such **.csv** (comma-separated values) files.
+        Data is often stored in files such **.csv** (comma-separated values) files.
         These file types are used to represent spreadsheet-like data.
 
         Let's look at the example below to see how to open these files in Python and print the contents to the screen.
@@ -1046,8 +1093,8 @@ print number_of_todos
         When you open a file using the "with" syntax, that creates a new block and the file will be closed automatically for you as soon as you exit the block.
 
         ```python
-         with open('llc-chapters.csv') as chapters:
-             print(chapters.read())
+         with open('llc-chapters.csv') as chapters_file:
+             print(chapters_file.read())
 
         ```
 
@@ -1061,16 +1108,19 @@ print number_of_todos
       <script type="text/template">
         ## Comma-Separated Values (CSV) Files
 
-        To make use of the data in a file, we need to make sense of small portions at a time.
+        In the last example, we used the `read()` function to read the entire file. 
+        
+        There is also a function called `readline()` that will give us one line at time. 
+
         In the `llc-chapters.csv` file, each line of the file represents a Ladies Learning Code chapter.
 
         Let&rsquo;s try printing out a few individual lines using the example below.
 
         ```python
-        with open('llc-chapters.csv') as chapters:
-             print(chapters.readline())
-             print(chapters.readline())
-             print(chapters.readline())
+        with open('llc-chapters.csv') as chapters_file:
+             print(chapters_file.readline())
+             print(chapters_file.readline())
+             print(chapters_file.readline())
         ```
       </script>
     </section>
@@ -1099,15 +1149,15 @@ print number_of_todos
       <script type="text/template">
         ## Loops: Reading all the lines in a file
 
-        We've just seen how to print out one line of a time but what if you need to read all the lines in the file?
+        We've just seen how to print out one line at a time but what if you need to read all the lines in the file?
 
         Try using the `for` loop to print each row in the file.
 
         Here's some sample code:
 
         ```python
-        with open('llc-chapters.csv') as chapters:
-             for line in chapters:
+        with open('llc-chapters.csv') as chapters_file:
+             for line in chapters_file:
                print(line)
 
         ```
@@ -1128,7 +1178,7 @@ print number_of_todos
       <script type="text/template">
         ## Libraries
 
-        Python has many useful built in **libraries** &mdash; collections of pre-written code.
+        Python has many useful built in **libraries** &mdash; collections of code that other people have written.
 
         Today we&rsquo;ll use the **csv** library to help us make more sense of the data contained in a CSV file and learn more about the LLC activities in 2015.
         This library will help us read the data in the file and transform it into a form that is easier to work with.
@@ -1163,7 +1213,9 @@ print number_of_todos
       <script type="text/template">
         ## Reading data from a CSV file
 
-        The CSV library has a number of different tools for extracting data from a CSV file. Instead of a line of comma-separated values like in the previous example, we can access individual values (like the cells of a spreadsheet).
+        The CSV library has a number of different tools for extracting data from a CSV file. 
+        
+        Instead of a line of comma-separated values like in the previous example, we want to access individual values (like the cells of a spreadsheet).
 
         Today we&rsquo;ll mostly use the `DictReader` tool to access the values.
 
@@ -1186,7 +1238,7 @@ print number_of_todos
 
         What is this?
         ```python
-        {'City': 'Vancouver', 'Chapter Lead(s)': 'Meghan', 'Province': 'BC'} 
+        OrderedDict([('City', 'Vancouver'), ('Province', 'BC'), ('Chapter Lead(s)', 'Meghan')])        
            ```
       </script>
     </section>
@@ -1202,7 +1254,7 @@ print number_of_todos
         
          The console printed out `chapter` like this:
           ```python
-        {'City': 'Vancouver', 'Chapter Lead(s)': 'Meghan', 'Province': 'BC'} 
+          OrderedDict([('City', 'Vancouver'), ('Province', 'BC'), ('Chapter Lead(s)', 'Meghan')])          
            ```
 
         But think of it like this: 
@@ -1237,8 +1289,8 @@ print number_of_todos
         ```python
          import csv
          with open('llc-chapters.csv') as chapters_file:
-             chapters = csv.DictReader(chapters_file)
-             for chapter in chapters:
+             chapters_data = csv.DictReader(chapters_file)
+             for chapter in chapters_data:
                        print(chapter['City'] + ', ' + chapter['Province'])
                        print(chapter['Chapter Lead(s)'])
 
@@ -1274,9 +1326,7 @@ print number_of_todos
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Counting loops
-
-        
+        ## Counting loops        
 
         Count the number of chapters in **llc-chapters.csv** by adding one each time it loops.
 
@@ -1284,11 +1334,11 @@ print number_of_todos
         # file: exercises/demo_loop_count.py
         import csv
 
-        with open('llc-chapters.csv') as csv_file:
-            csv_data = csv.DictReader(csv_file)
+        with open('llc-chapters.csv') as chapters_file:
+            chapters_data = csv.DictReader(chapters_file)
 
             count = 0
-            for row in csv_data:
+            for row in chapters_data:
                count = count + 1
 
             print("There are " + str(count) + " chapters")
@@ -1353,7 +1403,7 @@ print number_of_todos
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Going bigger
+        ## Go big or go home
 
         So far, we've used small examples to practice using CSV files and recognizing patterns.
 
