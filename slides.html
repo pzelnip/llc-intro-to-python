@@ -752,8 +752,8 @@
       <script type="text/template">
         ## Testing with Math Comparison Operators
 
-        Create a new file called `comparison_operators.py` to use for the next section. 
-        
+        Create a new file called `comparison_operators.py` to use for the next section.
+
         Math operators can also be used to test numeric values. Here are a few we will use today.
 
         `>` greater than
@@ -808,7 +808,7 @@
 
         Try these examples with multiple conditions.
 
-        Check if a number is within a range: 
+        Check if a number is within a range:
         ```python
          x = 5
          if x > 0 and x < 6:
@@ -816,7 +816,7 @@
 
         ```
 
-    
+
         ```python
          if x > 10 and x < 0:
              print("x could never be greater than 10 AND less than 0")
@@ -892,7 +892,7 @@
    ```
    ```python
 to_do_list = ['Water plants','Clean bathroom','Buy shoes','Solve climate change']
-   
+
      ```
 
    ```python
@@ -904,7 +904,7 @@ prime_numbers = [2,3,5,7,11,13]
 
     ```python
     different_data_types = [3.14,'Canada', 22/7, 1729]
-    
+
       ```
 
   </script>
@@ -915,7 +915,7 @@ prime_numbers = [2,3,5,7,11,13]
     ## Using Lists
 
     Items in a list can be accessed one at a time.
-    
+
     They are **indexed** (counted) starting at 0.
 
     ```python
@@ -928,7 +928,7 @@ prime_numbers = [2,3,5,7,11,13]
     weather_conditions[3]
     weather_conditions[10]
    ```
-   
+
    What Happened?
 
     ```python
@@ -959,25 +959,25 @@ my_list = ['some','items']
 for member in my_list:
    # do something
    # python will do all of this indented code for each item
-   
+
 ```
-Print all of the items in the list:        
+Print all of the items in the list:
       ```python
 weather_conditions = ['rainy', 'snowing', 'cloudy','sunny','foggy']
 
 for condition in weather_conditions:
   print condition
-      
+
      ```
 
 Perform some math on each item in the list:
      ```python
     numbers = [5,11,66,22.5]
-     
+
     for number in numbers:
        result = number * 2
        print str(number) +' x 2 = ' + str(result)
-           
+
 ```
 
 </script>
@@ -993,7 +993,7 @@ As python accesses each item in a list, we can tell it to count how many items i
 We can add `1` to the current value of a variable, and assign it back to the same variable. Python processes everything to the right of the `=` before assigning the result.
 
 
-Count the number of items on your to-do list:          
+Count the number of items on your to-do list:
       ```python
 number_of_todos = 0
 to_do_list = ['Water plants', 'Clean bathroom','Sweep floors','Buy Coffee','Organise books','Write a novel']
@@ -1017,9 +1017,9 @@ print number_of_todos
 
     Combine what you learned earlier about variables and conditionals (**if** statements) with what you just learned about loops.
 
-    Open the file `ex4_smart_loops.py`. 
+    Open the file `ex4_smart_loops.py`.
 
-    The file contains a list with a lot of numbers in it. 
+    The file contains a list with a lot of numbers in it.
 
     * count how many items are less than 50, and print it to the console
     * count how many items are both greater than 500 and less than 1000, and print it to the console
@@ -1122,7 +1122,7 @@ print number_of_todos
         ```
 
 
-       
+
       </script>
     </section>
 
@@ -1193,7 +1193,7 @@ print number_of_todos
 
         What is this?
         ```python
-        {'City': 'Vancouver', 'Chapter Lead(s)': 'Meghan', 'Province': 'BC'} 
+        {'City': 'Vancouver', 'Chapter Lead(s)': 'Meghan', 'Province': 'BC'}
            ```
       </script>
     </section>
@@ -1205,23 +1205,23 @@ print number_of_todos
         Python used `DictReader` to read a row in the file and transform it into a **dictionary**, a bunch of *key: value pairs*.
 
         This is just like a regular dictionary:
-         > **[python](http://www.dictionary.com/browse/python)** : any of several Old World boa constrictors of the subfamily Pythoninae, often growing to a length of more than 20 feet 
-        
+         > **[python](http://www.dictionary.com/browse/python)** : any of several Old World boa constrictors of the subfamily Pythoninae, often growing to a length of more than 20 feet
+
          The console printed out `chapter` like this:
           ```python
-        {'City': 'Vancouver', 'Chapter Lead(s)': 'Meghan', 'Province': 'BC'} 
+        {'City': 'Vancouver', 'Chapter Lead(s)': 'Meghan', 'Province': 'BC'}
            ```
 
-        But think of it like this: 
+        But think of it like this:
         > **City**: 'Vancouver'
 
         > **Chapter Lead(s)**: 'Meghan'
 
         >  **Province**: 'BC'
-      
+
 
         Python can 'look up' each value in a row just as you would the meaning of the word *python*.
-        
+
         ```python
          print(chapter['City'])
          print(chapter['Province'])
@@ -1235,7 +1235,7 @@ print number_of_todos
       <script type="text/template">
         ## Example: Working in a `for` loop
 
-        Earlier, we learned how `for` loops can repeat the same set of instructions. 
+        Earlier, we learned how `for` loops can repeat the same set of instructions.
 
         * the `for` loop assigns *each row* to the `chapter` variable
         * group instructions together with the same indentation
@@ -1283,7 +1283,7 @@ print number_of_todos
       <script type="text/template">
         ## Counting loops
 
-        
+
 
         Count the number of chapters in **llc-chapters.csv** by adding one each time it loops.
 
@@ -1339,7 +1339,7 @@ print number_of_todos
         Remember, `.find()` returns the index of the search string in the other string **or** `-1` to signal nothing was found. Try using the `>=` operator to determine if the string was found.
 
         ```python
-         leads = "Nancy & Cassie"
+         leads = "Erika & Cassie"
          if leads.find("&") >= 0:
              print(leads + " are co-leads")
 
