@@ -129,16 +129,9 @@
         * Computers need *very specific* instructions
         * Programming languages have syntax, just like human languages have grammar rules
 
-        <br>
-        ### Why Python Is Awesome
-
-        *   Free!
-        *   Open source
-        *   Write once, run anywhere
-        *   Great community
-        *   The syntax looks similar to English
-        *   Meaningful errors, easy to debug
-
+        ![Programming ](framework/img/workshop/what_is_programming.png) 
+        
+        
       </script>
     </section>
 
@@ -159,6 +152,17 @@
         ![](framework/img/workshop/logo-pinterest.png)
         ![](framework/img/workshop/logo-youtube.png)
         ![](framework/img/workshop/logo-theonion.png)
+
+
+        ### Why Python Is Awesome
+
+        *   Free!
+        *   Open source
+        *   Write once, run anywhere
+        *   Great community
+        *   The syntax looks similar to English
+        *   Meaningful errors, easy to debug
+
 
       </script>
     </section>
@@ -303,11 +307,11 @@
 
         * Functions are bundles of instructions that can be re-used
         * Reusing functions helps to reduce redundancy
-        * Function can take **arguments** and can **return** values
+        * Functions can 
+         * do work and return nothing 
+         * take **arguments** and can **return** values
 
-        [todo insert picture]
-
-        ![goat](https://pbs.twimg.com/media/DT6OztEVoAAIa6t.jpg "I need a picture")
+        ![Functions](./framework/img/workshop/functions.png)
         
 
         It is possible to [create your own](https://docs.python.org/3/tutorial/controlflow.html#defining-functions) but today's exercises will use functions provided by Python and its libraries.
@@ -449,12 +453,14 @@
     <section class="slide" data-markdown>
       <script type="text/template">
         ## Variables
-
-        ![I need a picture](https://pbs.twimg.com/media/DT6OztEVoAAIa6t.jpg "I need a picture")
         
         * Used to store a value to use whenever you need it
         * Variables store data in the computer&rsquo;s memory and a **variable name** is used to fetch their value (kind of like a bookmark in a book)
         
+
+        ![Functions](./framework/img/workshop/variables.png)
+
+
       </script>
     </section>
 
@@ -462,7 +468,7 @@
       <script type="text/template">
         ## Variables (Continued)
         
-         Use the equal (`=`) symbol to *assign* a value to a variable.
+         Use the equal (`=`) symbol to **assign** a value to a variable.
 
         ```python
         >>> x = 5
@@ -478,9 +484,9 @@
         ```
         You can store almost anything in a variable, including a string:
         ```python
-        >>> today = "Saturday"
-        >>> print("Today is " + today)
-        Today is Saturday
+        >>> animal = "python"
+        >>> print("My favourite animal is a " + animal)
+        My favourite animal is a python 
         ```
         
       </script>
@@ -492,12 +498,22 @@
 
         Variables can be changed after the initial declaration by "reassigning" them.
 
+        #### strings
+
+        ```python
+        >>> animal = "hedgehog"
+        >>> print("My favourite animal is a " + animal)
+        My favourite animal is a hedgehog 
+        ```
+
+        #### math
+
         ```python
         >>> y = 10
         >>> x * y
         ```
 
-        What do you think the value of `x * y` will be? <span class="delayed">50</span>
+        What do you think the value of `x * y` will be? <span class="delayed">`50`</span>
 
         Why?<!-- .element: class="delayed" -->
 
@@ -901,7 +917,7 @@
   the_name_of_the_list = ['items', 'separated', 'by','commas'] 
     ```
 
-    Examples: 
+    #### Examples: 
 
     ```python
      weather_conditions = ['rainy', 'snowing', 'cloudy','sunny','foggy']
@@ -972,7 +988,7 @@ Python cannot find `weather_conditions[10]` because it does not exist.
 
       One of the most powerful tools we have as programmers is having a computer repeat the same instruction for us many times.
 
-      ![Power](framework/img/workshop/power.gif)
+      ![Power](framework/img/workshop/power.gif) <!-- .element: width="30%" -->
 
       Python can access each item in a list in order, and do something with each item. We call this **looping** through the list.
 
